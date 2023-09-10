@@ -1,47 +1,42 @@
 class Stack:
     def __init__(self):
         self.stack=[]
-        self.top=-1
         self.size=5
-    def push(self,e):
+        self.top=-1
+    def insert(self,x):
         if self.top==self.size-1:
-            print("Stack Overflow")
+            print("Stack is Overflow")
         else:
+            print(f"Element Inserted: {x}")
             self.top+=1
-            self.stack.append(e)
-    def pop(self):
+            self.stack.append(x)
+    def delete(self):
         if self.top==-1:
-            print("Stack Underflow")
+            print("Stack is Underflow")
         else:
-            print("Element to be deleted:",self.stack.pop(self.top))
+            print(f"Element to be deleted:{self.top}")
+            self.stack.pop(self.top)
             self.top-=1
     def display(self):
         if self.top==-1:
-            print("No elements to be dislayed")
+            print("No element to be display")
         else:
-            print(self.stack[self.top],"-->top")
+            print(f"{self.stack[self.top]} <--top")
             for i in range (self.top-1,-1,-1):
                 print(self.stack[i])
-stackobj=Stack()
+obj=Stack()
 while True:
-    print("\n-----*STACK MENU*-----\n1.push\n2.pop\n3.display\n4.exit")
+    print("-----*-----*-----\nStack Menu")
+    print("1.Insert\n2.Delete\n3.Display\n4.Exit")
     ch=int(input("Enter your choice:"))
     if ch==1:
-        e=int(input("Enter element to be inserted:"))
-        stackobj.push(e)
+        x=int(input("Enter element to be inserted:"))
+        obj.insert(x)
     elif ch==2:
-        stackobj.pop()
+        obj.delete()
     elif ch==3:
-        stackobj.display()
+        obj.display()
     elif ch==4:
         break
     else:
         print("Invalid choice")
-            
-            
-            
-            
-            
-            
-            
-            
