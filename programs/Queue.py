@@ -1,53 +1,47 @@
 class Queue:
     def __init__(self):
+        self.queue = []
         self.size = 5
         self.front = 0
         self.rear = 0
-        self.Q = []
 
-    def insert(self, e):
+    def enqueue(self, x):
         if self.rear == self.size:
             print("Queue is Full")
         else:
-            self.Q.append(e)
+            self.queue.append(x)
             self.rear += 1
 
-    def delete(self):
-        if self.front == self.rear:
-            print("Queue is empty")
+    def dequeue(self):
+        if self.rear == self.front:
+            print("Queue is Underflow")
         else:
-            print("Element to be deleted is", self.Q[self.front])
+            print(f"Element to be deleted: {self.queue[self.front]}")
             self.front += 1
 
     def display(self):
         if self.front == self.rear:
-            print("No elements to display")
+            print("Queue is empty")
         else:
-            print(self.Q[self.front], "<-- front")
+            print(f"{self.queue[self.front]} <-- front")
             for i in range(self.front + 1, self.rear-1):
-                print(self.Q[i])
-            print(self.Q[self.rear - 1], "<-- rear")
+                print(self.queue[i])
+            print(f"{self.queue[self.rear - 1]} <-- rear")
 
-queueObj = Queue()
 
+obj = Queue()
 while True:
-    print("Queue Menu")
-    print("-----------")
-    print("1 for insert")
-    print("2 for delete")
-    print("3 for display")
-    print("4 for exit")
-    ch = int(input("Enter your choice: "))
+    print("-----*--Queue Menu--*-----")
+    print("1. Enqueue\n2. Dequeue\n3. Display\n4. Exit")
+    ch = int(input("Enter your choice:"))
     if ch == 1:
-        x = int(input("Enter the element to be inserted: "))
-        queueObj.insert(x)
+        x = int(input("Enter element:"))
+        obj.enqueue(x)
     elif ch == 2:
-        queueObj.delete()
+        obj.dequeue()
     elif ch == 3:
-        queueObj.display()
+        obj.display()
     elif ch == 4:
         break
     else:
-        print("Invalid choice")
-
-
+        print("Invalid Choice")
