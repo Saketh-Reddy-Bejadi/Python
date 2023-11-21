@@ -13,8 +13,11 @@
 
 
 
-n = int(input())
 arr = list(map(int, input().split()))
-arr.pop(max(arr))
+lg=max(arr)
+arr.remove(lg)
+for i in range(0,len(arr)):
+    if lg in arr:
+        arr.remove(lg)
 print(max(arr))
     
