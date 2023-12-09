@@ -11,6 +11,8 @@ occupied=distance(x1,y1,x3,y3)
 
 if (actual==occupied) :
     print(-1)
+elif (x1==y1 or x2 ==y2 or x3==y1):
+    print(-1)
 elif(actual<occupied) :
     diff_land=occupied-actual
     remain_lan=math.ceil(math.sqrt(diff_land))**2
