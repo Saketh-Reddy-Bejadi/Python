@@ -55,5 +55,6 @@ class Upscaling {
             }
 
         }
+        sc.close();
     }
 }
