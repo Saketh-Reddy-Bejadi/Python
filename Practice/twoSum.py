@@ -1,11 +1,12 @@
 def twoSum(nums,target):
-    res=[]
+    res=set()
     for i in range(len(nums)):
         for j in range(len(nums)):
-            if nums[i]!=nums[j] and nums[i]+nums[j]==target and i not in res and j not in res:
-                res.append(i)
-                res.append(j)
+            if nums[i]!=nums[j] and nums[i]+nums[j]==target:
+                res.add(i)
+                res.add(j)
             else:
                 continue
+    res=list(res)
     print(res)
 twoSum([3,2,4],6)
