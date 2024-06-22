@@ -1,13 +1,4 @@
-nums = [1,1]
-l=len(nums)
-nums.sort()
-nums=list(set(nums))
-i=1
-res=[]
-j=0
-while(len(res)+j<l+1):
-    if nums[j]!=i:
-        res.append(i)
-    i+=1
-    j+=1
-print(res)
+nums = [4,3,2,7,8,2,3,1]
+n=len(nums)
+s=set(range(1,n+1))
+print(list(s - set(nums)))
