@@ -1,22 +1,21 @@
 def valid(s,t):
-    if len(s)!=len(t):
-        return False
-    # sCount={}
-    # tCount={}
-    # for c in s:
-    #     if c in sCount:
-    #         sCount[c]+=1
-    #     else:
-    #         sCount[c]=1
-    # for c in t:
-    #     if c in tCount:
-    #         tCount[c]+=1
-    #     else:
-    #         tCount[c]=1
-    # for i,j in sCount.
-    for i in range(len(s)):
-        if s.count(s[i])!=t.count(t[i]):
+    if len(s) != len(t):
             return False
+    ST = {}
+    TS = {}
+    for i in range(len(s)):
+        if s[i] in ST:
+            if ST[s[i]] != t[i]:
+                return False
+        else:
+            ST[s[i]] = t[i]
+            
+        if t[i] in TS:
+            if TS[t[i]] != s[i]:
+                return False
+        else:
+            TS[t[i]] = s[i]
     return True
-
+            
+            
 print(valid('foo','bar'))
