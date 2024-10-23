@@ -1,7 +1,7 @@
 def valid(A,B):
     seen = set()
     for num in A:
-        if (num - B) in seen or (num - B) in seen:
+        if (num - B) in seen:
             return 1
         seen.add(num)
     return 0
