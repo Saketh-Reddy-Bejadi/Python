@@ -1,6 +1,6 @@
 import math
 
-def is_binary_decimal(x):
+def binary(x):
     for i in range(2, int(math.sqrt(x)) + 1):
         if x % i == 0:
             while x % i == 0:
@@ -15,7 +15,7 @@ def solve():
     t = int(input())
     for _ in range(t):
         n = int(input()) 
-        if is_binary_decimal(n):
+        if binary(n):
             print("YES")
         else:
             print("NO")

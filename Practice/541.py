@@ -1,15 +1,13 @@
-s = "abcdefgh"
-s=list(s)
-n=len(s)
-k = 2
-i=0
-while(i<len(s)-1):
-    if n>k:
-        s[i],s[i+1]=s[i+1],s[i]
-        n-=4
-        i=(i+k)*2
-    else:
-        t=s[i:]
-        t.reverse()
-        s=s[:i-1]+t
-print(s)::
+def valid(s,k):
+    s = list(s)
+    i=0
+    while(i<len(s)):
+        t=s[i:k][::-1]
+        s=s[:i]+t+s[k:]
+        i+=k*2
+        k+=i
+    return s
+        :
+s="krmyfshbspcgtesxnnljhfursyissjnsocgdhgfxubewllxzqhpasguvlrxtkgatzfybprfmmfithphckksnvjkcvnsqgsgosfxc"
+k=20
+print(valid(s,k))

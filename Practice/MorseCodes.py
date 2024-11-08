@@ -1,15 +1,15 @@
 morseCode=['.-','-...','-.-.','-..','.','..-.','--.','....','..','.---','-.-','.-..','--','-.','---','.--.','--.-','.-.','...','-','..-','...-','.--','-..-','-.--','--..']
 n=int(input())
-words=input().split()
+w=input().split()
 letToM={}
 for i in range(26):
-    letter=chr(i+ord('a'))
-    morse=morseCode[i]
-    letToM[letter]=morse
+    l=chr(i+ord('a'))
+    m=morseCode[i]
+    letToM[l]=m
 tra=set()
-for w in words:
+for i in w:
     t=''
-    for c in w:
+    for c in i:
         t+=''.join(letToM[c])
     tra.add(t)
 print(len(tra))

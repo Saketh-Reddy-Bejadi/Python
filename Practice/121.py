@@ -1,15 +1,15 @@
-def maxProfit(prices):
-    if not prices:
+def maxProfit(p):
+    if not p:
         return 0
     
-    min_price = prices[0]
-    max_profit = 0
+    minPrice = p[0]
+    maxProfit = 0
     
-    for price in prices:
-        min_price = min(min_price, price)
-        max_profit = max(max_profit, price - min_price)
+    for i in p:
+        minPrice = min(minPrice, i)
+        maxProfit = max(maxProfit, i - minPrice)
     
-    return max_profit
+    return maxProfit
         
 prices = [2,4,1]
 print(maxProfit(prices))

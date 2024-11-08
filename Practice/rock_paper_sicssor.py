@@ -1,25 +1,25 @@
 import random
 
-def play_game(player_choice, computer_choice):
-    if player_choice == computer_choice:
+def play_game(pc, cc):
+    if pc == cc:
         return "It's a tie!"
     elif (
-        (player_choice == "rock" and computer_choice == "scissors") or
-        (player_choice == "paper" and computer_choice == "rock") or
-        (player_choice == "scissors" and computer_choice == "paper")
+        (pc == "rock" and cc == "scissors") or
+        (pc == "paper" and cc == "rock") or
+        (pc == "scissors" and cc == "paper")
     ):
         return "You win!"
     else:
         return "Computer wins!"
 
-choices = ["rock", "paper", "scissors"]
-player_choice = input("Enter your choice (rock, paper, scissors): ").lower()
-computer_choice = random.choice(choices)
+c = ["rock", "paper", "scissors"]
+pc = input("Enter your choice (rock, paper, scissors): ").lower()
+cc = random.choice(c)
 
-if player_choice in choices:
-    result = play_game(player_choice, computer_choice)
-    print("Player's choice:", player_choice)
-    print("Computer's choice:", computer_choice)
-    print(result)
+if pc in c:
+    r = play_game(pc, cc)
+    print("Player's choice:", pc)
+    print("Computer's choice:", cc)
+    print(r)
 else:
     print("Invalid choice. Please choose from rock, paper, or scissors.")

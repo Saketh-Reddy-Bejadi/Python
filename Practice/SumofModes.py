@@ -4,7 +4,7 @@ def countM(s):
         co[int(char)]+=1
     mc=max(co)
     m=[]
-    for i,freq in enumerate(c):
+    for i,freq in enumerate(co):
         if freq==mc:
             m.append(i)
     return len(m)

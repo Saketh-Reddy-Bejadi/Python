@@ -5,6 +5,5 @@ def valid(A):
         r+=(" " +i)
     return r.strip()
 
-
 A="the sky is blue"
 print(valid(A))

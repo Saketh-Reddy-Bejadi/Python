@@ -1,9 +1,9 @@
-def alice_score(n, a):
-    a.sort()  # Sorting in non-decreasing order
+def valid(n, a):
+    a.sort() 
     mex = 0
 
     for i in range(n):
-        if i % 2 == 0:  # Alice's turn
+        if i % 2 == 0: 
             if a[i] == mex:
                 mex += 1
 
@@ -13,4 +13,4 @@ t = int(input())
 for _ in range(t):
     n = int(input())
     a = list(map(int, input().split()))
-    print(alice_score(n, a))
+    print(valid(n, a))

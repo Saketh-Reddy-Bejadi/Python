@@ -1,18 +1,18 @@
-def valid(boxTypes,truckSize):
-    for i in range(len(boxTypes)):
-        for j in range(0, len(boxTypes) - i - 1):
-            if boxTypes[j][1] < boxTypes[j + 1][1]:
-                boxTypes[j], boxTypes[j + 1] = boxTypes[j + 1], boxTypes[j]
-    boxesInTruck=0
-    for box in boxTypes:
-        if box[0]<=truckSize:
-            boxesInTruck+=box[0]*box[1]
-            truckSize-=box[0]
+def valid(t,s):
+    for i in range(len(t)):
+        for j in range(0, len(t) - i - 1):
+            if t[j][1] < t[j + 1][1]:
+                t[j], t[j + 1] = t[j + 1], t[j]
+    b=0
+    for i in t:
+        if i[0]<=s:
+            b+=i[0]*i[1]
+            s-=i[0]
         else:
-            while(truckSize>0):
-                truckSize-=1
-                boxesInTruck+=1*box[1]
-    return boxesInTruck
+            while(s>0):
+                s-=1
+                b+=1*i[1]
+    return b
             
     
 print(valid([[5,10],[2,5],[4,7],[3,9]],10))

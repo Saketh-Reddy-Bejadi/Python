@@ -1,4 +1,3 @@
-import math
 def valid(arr):
     n=len(arr)
     arr.sort()

@@ -1,12 +1,11 @@
 def Jump(nums):
-    jump=1
-    for i in nums[nums[0]:]:
-        if jump==0:
-            break::
-        if jump>1:
-            jump-=1
-            continue
-        else:
-            jump=i
-    return jump==nums[-1]
+    if len(nums)==1:return True
+    jump=0
+    for step in nums:
+        if jump<0:
+            return False
+        elif step>jump:
+            jump=step
+        jump-=1
+    return True
 print(Jump([3,2,1,0,4]))

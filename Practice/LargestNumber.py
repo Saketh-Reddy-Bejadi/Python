@@ -7,12 +7,12 @@ for i in range(0,n):
 print("Given Elements are:",L)
 
 def maximum(L):
-    _max=L[0]
+    Max=L[0]
     for i in L:
-        if _max<i:
-            _max=i
+        if Max<i:
+            Max=i
             
          
-    print("Largest element is:",_max)
+    print("Largest element is:",Max)
     
 maximum(L)

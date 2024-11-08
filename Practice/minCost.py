@@ -1,15 +1,15 @@
-# def min_cost_ternary_array(N, A):
-#     total_cost = 0
-#     for i in range(N):
-#         min_cost = float('inf')
-#         for j in range(3):
-#             cost = abs(A[i] - j)
-#             if cost < min_cost:
-#                 min_cost = cost
-#         total_cost += min_cost
-#     return total_cost
+def mincost(N, A):
+    tc = 0
+    for i in range(N):
+        mc = float('inf')
+        for j in range(3):
+            c = abs(A[i] - j)
+            if c < mc:
+                mc = c
+        tc += mc
+    return tc
 
-# N = int(input())
-# A = list(map(int, input().split()))
+N = int(input())
+A = list(map(int, input().split()))
 
-# print(min_cost_ternary_array(N, A))
+print(mincost(N, A))

@@ -1,5 +1,4 @@
 def valid(arr):
-    ind=0
     # arr.sort()
     # arr=arr[ind:]+arr[:ind][::-1]
     # i=0
@@ -10,7 +9,7 @@ def valid(arr):
     #         j-=1
     #     else:
     #         i+=1
-    index=0
+    ind=0
     for i in range(len(arr)):
         if arr[i] >= 0:
             arr[index], arr[i] = arr[i], arr[index]

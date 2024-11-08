@@ -1,23 +1,20 @@
-def can_make_zero(arr, n):
-    operations_needed = [0] * n
+def zero(arr, n):
+    o = [0] * n
 
-    # Calculate the operations needed for each element
     for i in range(1, n - 1):
-        operations_needed[i] = max(0, arr[i] - arr[i - 1])
+        o[i] = max(0, arr[i] - arr[i - 1])
 
-    # Perform the operations
     for i in range(1, n - 1):
-        if arr[i] < operations_needed[i]:
+        if arr[i] < o[i]:
             return "NO"
-        arr[i] -= operations_needed[i]
-        arr[i + 1] -= operations_needed[i]
-        operations_needed[i + 1] += operations_needed[i] * 2
+        arr[i] -= o[i]
+        arr[i + 1] -= o[i]
+        o[i + 1] += o[i] * 2
 
-    # Check if all elements become zero
     return "YES" if all(x == 0 for x in arr) else "NO"
 
 t = int(input())
 for _ in range(t):
     n = int(input())
     arr = list(map(int, input().split()))
-    print(can_make_zero(arr, n))
+    print(zero(arr, n))
