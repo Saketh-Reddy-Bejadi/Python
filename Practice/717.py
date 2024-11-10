@@ -1,12 +1,12 @@
 def valid(bits):
-    i = 0
-    while i < len(bits):
-        if i == len(bits) - 1:
+    i=0
+    while i<len(bits):
+        if i==len(bits)-1:
             return True
-        if bits[i] == 0:
-            i += 1
+        if bits[i]==0:
+            i+=1
         else:  
-            i += 2
+            i+=2
     return False
 
 
