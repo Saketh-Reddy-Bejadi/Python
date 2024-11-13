@@ -1,7 +1,7 @@
 def valid(pattern,s):
     d={}
     s=s.split(' ')
-    if len(pattern) != len(s):
+    if len(pattern)!=len(s):
         return False
     for i in range(len(pattern)):
         if pattern[i] in d:
