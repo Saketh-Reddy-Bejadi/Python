@@ -1,0 +1,18 @@
+def minimum_operations_to_empty(S):
+    if not S:  # If the string is empty, no operations are needed
+        return 0
+    
+    # Initialize the segment counter
+    operations = 1  # The first character starts the first segment
+    
+    # Traverse the string to count contiguous segments
+    for i in range(1, len(S)):
+        if S[i] != S[i-1]:
+            operations += 1
+    
+    # Each segment can be removed in one operation
+    return operations
+
+# Example Usage
+S = "ABAB"
+print(minimum_operations_to_empty(S))  # Output: 3
