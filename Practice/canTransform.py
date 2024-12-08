@@ -10,6 +10,6 @@ def can_transform(s1, s2):
         else:s[i]=f
     return True
 
-s1 = "abab"
-s2 = "fdfz"
-print(can_transform(s1, s2))
+s1="abab"
+s2="fdfz"
+print(can_transform(s1,s2))
